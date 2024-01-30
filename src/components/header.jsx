@@ -8,10 +8,10 @@ const header = () => {
           <div className="flex space-x-2 text-lg hover:cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
+              width="20"
               height="25"
               fill="currentColor"
-              className="bi bi-backpack4"
+              className="bi bi-backpack4 text-blue-500"
               viewBox="0 0 16 16"
             >
               <path d="M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z" />

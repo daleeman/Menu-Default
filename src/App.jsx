@@ -13,8 +13,10 @@ function App() {
 
   return (
     <>
-      <Header></Header>
-      <div>
+      <div className="fixed top-0 w-full z-10">
+        <Header></Header>
+      </div>
+      <div className="mt-12">
         <div className="grid-col-1 md:grid grid-flow-col">
           <div className="hidden md:block bg-blue-500 col-span-1 shadow-lg">
             <Categories></Categories>
@@ -24,8 +26,10 @@ function App() {
           </div>
         </div>
       </div>
+      {/* <div className="mt-12">
+        <CartList></CartList>
+      </div> */}
       <Footer></Footer>
-      <CartList></CartList>
     </>
   );
 }
