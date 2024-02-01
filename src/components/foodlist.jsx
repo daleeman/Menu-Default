@@ -1,37 +1,23 @@
 import React from "react";
+import { useDefaultContext } from "../context/context";
 
-const foodlist = () => {
+const foodlist = ({ selectedCategory, setCartList }) => {
   const handleAddToCart = (food) => {
-    console.log(food);
+    setCartList((prevState) => ({
+      ...prevState,
+      cartList: [...prevState.cartList, food],
+    }));
   };
-  const foodlist = [
-    {
-      id: 1,
-      category: "Breakfast",
-      foodTitle: "Poached Eggs",
-      price: 100,
-    },
-    {
-      id: 2,
-      category: "Breakfast",
-      foodTitle: "Poached Eggs",
-      price: 100,
-    },
-    {
-      id: 3,
-      category: "Breakfast",
-      foodTitle: "Poached Eggs",
-      price: 100,
-    },
-  ];
 
+  //const foodlist = useFoodListContext();
+  const { foodList } = useDefaultContext();
   return (
     <div>
       <div className="p-6">
         <h1 className="font-bold text-2xl">Breakfast</h1>
       </div>
       <div className="md:grid grid-cols-4 grid-rows-4">
-        {foodlist.map((food) => (
+        {foodList.map((food) => (
           <div key={food.id} className="flex flex-start justify-center">
             <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 bg-slate-50 h-96 w-96 hover:scale-105 duration-200">
               <img

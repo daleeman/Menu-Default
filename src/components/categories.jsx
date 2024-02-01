@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { useDefaultContext } from "../context/context";
 
-const categories = () => {
-  //const [categories, setCategories] = useState();
+const categories = ({ setSelectedCategory }) => {
   const handleCategory = (category) => {
-    console.log(category);
+    setSelectedCategory((prevState) => ({
+      ...prevState,
+      selectedCategory: category,
+    }));
   };
-  const categories = ["Breakfast", "Brunch", "Lunch", "Snacks", "Dinner"];
+  const { categories } = useDefaultContext();
+  // const categories = ["Breakfast", "Brunch", "Lunch", "Snacks", "Dinner"];//hardcoded
+  //const categories = useCategoriesContext(); //using usecontext to consume categories from App to categories which is fetched using API later on
   return (
     <div className="flex items-center justify-end h-screen p-6">
       <div>
@@ -19,21 +24,6 @@ const categories = () => {
               {category}
             </li>
           ))}
-          {/* <li className="hover:text-white duration-200 cursor-pointer">
-            Breakfast
-          </li>
-          <li className="hover:text-white duration-200 cursor-pointer">
-            Brunch
-          </li>
-          <li className="hover:text-white duration-200 cursor-pointer">
-            Lunch
-          </li>
-          <li className="hover:text-white duration-200 cursor-pointer">
-            Snacks
-          </li>
-          <li className="hover:text-white duration-200 cursor-pointer">
-            Dinner
-          </li> */}
         </ul>
       </div>
     </div>
