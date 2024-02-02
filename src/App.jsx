@@ -7,6 +7,8 @@ import Foodlist from "./components/foodlist";
 import Footer from "./components/footer";
 import CartList from "./components/CartList";
 import { DefaultContext } from "./context/context";
+import About from "./components/About";
+import Contact from "./components/Contact";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -75,14 +77,14 @@ function App() {
     <>
       <DefaultContext.Provider value={globalState}>
         <BrowserRouter>
+          <div className="fixed top-0 w-full z-10">
+            <Header cartCount={globalState.cartList.length} />
+          </div>
           <Routes>
             <Route
               path="/"
               element={
                 <div>
-                  <div className="fixed top-0 w-full z-10">
-                    <Header cartCount={globalState.cartList.length} />
-                  </div>
                   <div className="mt-12">
                     <div className="grid-col-1 md:grid grid-flow-col">
                       <div className="hidden md:block bg-blue-500 col-span-1 shadow-lg">
@@ -104,8 +106,24 @@ function App() {
             <Route
               path="/cartlist"
               element={
-                <div className="mt-12">
+                <div className="mt-14">
                   <CartList cartList={globalState.cartList} />
+                </div>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <div className="mt-14">
+                  <About />
+                </div>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <div className="mt-14">
+                  <Contact />
                 </div>
               }
             />

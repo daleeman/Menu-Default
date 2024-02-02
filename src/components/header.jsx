@@ -6,30 +6,33 @@ const header = ({ cartCount }) => {
     <div className="bg-slate-50 p-4 shadow-md">
       <nav>
         <div className="flex justify-between">
-          <div className="flex space-x-2 text-lg hover:cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="25"
-              fill="currentColor"
-              className="bi bi-backpack4 text-blue-500"
-              viewBox="0 0 16 16"
-            >
-              <path d="M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z" />
-              <path d="M8 0a2 2 0 0 0-2 2H3.5a2 2 0 0 0-2 2v1c0 .52.198.993.523 1.349A.5.5 0 0 0 2 6.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6.5a.5.5 0 0 0-.023-.151c.325-.356.523-.83.523-1.349V4a2 2 0 0 0-2-2H10a2 2 0 0 0-2-2m0 1a1 1 0 0 0-1 1h2a1 1 0 0 0-1-1M3 14V6.937q.24.062.5.063h4v.5a.5.5 0 0 0 1 0V7h4q.26 0 .5-.063V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1m9.5-11a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
-            </svg>
-            <h1>Menu-Default</h1>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="30"
-              fill="currentColor"
-              className="block md:hidden bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
-            </svg>
-          </div>
+          <Link to={"/"}>
+            <div className="flex space-x-2 text-lg hover:cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="25"
+                fill="currentColor"
+                className="bi bi-backpack4 text-blue-500"
+                viewBox="0 0 16 16"
+              >
+                <path d="M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z" />
+                <path d="M8 0a2 2 0 0 0-2 2H3.5a2 2 0 0 0-2 2v1c0 .52.198.993.523 1.349A.5.5 0 0 0 2 6.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6.5a.5.5 0 0 0-.023-.151c.325-.356.523-.83.523-1.349V4a2 2 0 0 0-2-2H10a2 2 0 0 0-2-2m0 1a1 1 0 0 0-1 1h2a1 1 0 0 0-1-1M3 14V6.937q.24.062.5.063h4v.5a.5.5 0 0 0 1 0V7h4q.26 0 .5-.063V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1m9.5-11a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+              </svg>
+              <h1>Menu-Default</h1>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="30"
+                fill="currentColor"
+                className="block md:hidden bi bi-three-dots-vertical"
+                viewBox="0 0 16 16"
+              >
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+              </svg>
+            </div>
+          </Link>
+
           <div>
             <ul className="flex space-x-3">
               <li>
@@ -53,11 +56,10 @@ const header = ({ cartCount }) => {
                 </Link>
               </li>
               <li className="hidden md:block text-lg bg-blue-500 px-3 rounded text-white hover:text-black cursor-pointer duration-200">
-                {/* <Link to={`about`}>About</Link> */}
-                About
+                <Link to={`about`}>About</Link>
               </li>
               <li className="hidden md:block text-lg hover:text-blue-500 cursor-pointer duration-200">
-                Contact
+                <Link to={`contact`}>Contact</Link>
               </li>
             </ul>
           </div>

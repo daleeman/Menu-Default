@@ -5,19 +5,6 @@ import "./index.css";
 import { createBrowserRouter } from "react-router-dom";
 import CartList from "./components/CartList.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "cartlist",
-        element: <CartList />,
-      },
-    ],
-  },
-]);
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />

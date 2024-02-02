@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const CartList = ({ cartList }) => {
-  // console.log(cartList);
+  const [priceSum, setPriceSum] = useState(0);
+  useEffect(() => {
+    if (cartList.length > 0) {
+      setPriceSum(cartList.reduce((sum, item) => sum + item.price, priceSum));
+    }
+    console.log(priceSum);
+  }, [cartList]);
   if (cartList === undefined || cartList.length === 0) {
     return (
       <div className="flex p-6 h-screen items-center justify-center">
-        <h1 className=" text-2xl font-bold">No items in Cart!</h1>
+        <h1 className="text-2xl font-bold">No items in Cart!</h1>
       </div>
     );
   }
@@ -50,7 +56,7 @@ const CartList = ({ cartList }) => {
             <td className="py-2 px-4 border-b"></td>
             <td className="py-2 px-4 border-b"></td>
             <td className="py-2 px-4 border-b font-bold">Total</td>
-            <td className="py-2 px-4 border-b font-bold">Rs 1000</td>
+            <td className="py-2 px-4 border-b font-bold">Rs {priceSum}</td>
           </tr>
         </tfoot>
       </table>
